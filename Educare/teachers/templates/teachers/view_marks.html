@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Marks</title>
+</head>
+<body>
+    <h1>View Marks</h1>
+    <table>
+        <tr>
+            <th>Student</th>
+            <th>Batch</th>
+            <th>Subject</th>
+            <th>IA1 Marks</th>
+            <th>IA2 Marks</th>
+            <th>IA3 Marks</th>
+            <th>Midterm Marks</th>
+            <th>Final Marks</th>
+            <th>Total</th>
+        </tr>
+        {% for mark in marks %}
+        <tr>
+            <td>{{ mark.student.name }}</td>
+            <td>{{ mark.batch }}</td>
+            <td>{{ mark.subject.name }}</td>
+            <td>{{ mark.ia1_marks }}</td>
+            <td>{{ mark.ia2_marks }}</td>
+            <td>{{ mark.ia3_marks }}</td>
+            <td>{{ mark.midterm_marks }}</td>
+            <td>{{ mark.final_marks }}</td>
+            <td>{{ mark.total }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

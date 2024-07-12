@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Portal</title>
+</head>
+<body>
+    <h1>Welcome to the Student Portal</h1>
+
+    <section id="student-info">
+        <h2>Your Information</h2>
+        <p>Name: {{ student.name }}</p>
+        <p>Class: {{ student.class_name }}</p>
+        <!-- Other student details -->
+    </section>
+
+    <section id="top-students">
+        <h2>Top 3 Students</h2>
+        <ul>
+            {% for top_student in top_students %}
+            <li>{{ top_student.name }} - {{ top_student.total_marks }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section id="top-10-students">
+        <h2>Top 10 Students</h2>
+        <ul>
+            {% for top_student in top_10_students %}
+            <li>{{ top_student.name }} - {{ top_student.total_marks }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section id="achievements">
+        <h2>Student Achievements</h2>
+        <ul>
+            {% for achievement in achievements %}
+            <li>
+                <img src="{{ achievement.student.photo.url }}" alt="Photo of {{ achievement.student.name }}">
+                <p>{{ achievement.student.name }} - {{ achievement.event }}</p>
+                <p>Class: {{ achievement.student.class_name }}</p>
+                <p>Outcome: {{ achievement.outcome }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section id="events">
+        <h2>Ongoing Events</h2>
+        <ul>
+            {% for event in events %}
+            <li>
+                <p>Date: {{ event.date }}</p>
+                <p>Event: {{ event.event_name }}</p>
+                <p>Venue: {{ event.venue }}</p>
+                <p>Type: {{ event.event_type }}</p>
+                <p>Description: {{ event.description }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+</body>
+</html>

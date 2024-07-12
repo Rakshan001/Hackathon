@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration</title>
+</head>
+<body>
+    <h2>Event Registration Form</h2>
+    <form action="{% url 'register_event' %}" method="post">
+        {% csrf_token %}
+        <label for="student_name">Name:</label>
+        <input type="text" id="student_name" name="student_name" required><br><br>
+        
+        <label for="unique_id">Unique ID:</label>
+        <input type="text" id="unique_id" name="unique_id" required><br><br>
+        
+        <label for="roll_no">Roll No:</label>
+        <input type="text" id="roll_no" name="roll_no" required><br><br>
+        
+        <label for="class_name">Class:</label>
+        <input type="text" id="class_name" name="class_name" required><br><br>
+        
+        <label for="event_id">Event ID:</label>
+        <input type="text" id="event_id" name="event_id" required><br><br>
+        
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>

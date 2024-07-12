@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ event.event_name }}</title>
+</head>
+<body>
+    <h1>{{ event.event_name }}</h1>
+    <p>Date: {{ event.date }}</p>
+    <p>Venue: {{ event.venue }}</p>
+    <p>Type: {{ event.event_type }}</p>
+    <p>Description: {{ event.description }}</p>
+
+    <h2>Register for Event</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>

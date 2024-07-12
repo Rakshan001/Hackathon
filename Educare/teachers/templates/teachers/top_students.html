@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Top 10 Students</title>
+</head>
+<body>
+    <h1>Top 10 Students</h1>
+    <ul>
+        {% for student in top_students %}
+        <li>
+            <img src="{{ student.student__photo.url }}" alt="Photo of {{ student.student__name }}">
+            <p>{{ student.student__name }} - Total Marks: {{ student.total_marks }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
