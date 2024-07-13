@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .profile-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .profile-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <h2 class="profile-title">Profile</h2>
+        <div class="profile-details">
+            <p><strong>Name:</strong> {{ student.name }}</p>
+            <p><strong>Roll No:</strong> {{ student.roll_no }}</p>
+            <p><strong>Class:</strong> {{ student.student_class }}</p>
+            <p><strong>School:</strong> {{ student.current_school.name }}</p>
+            <p><strong>Father's Name:</strong> {{ student.fathers_name }}</p>
+            <p><strong>Mother's Name:</strong> {{ student.mothers_name }}</p>
+            <p><strong>Parent's Phone Number:</strong> {{ student.parents_phone_number }}</p>
+            <p><strong>Student's Phone Number:</strong> {{ student.student_phone_number }}</p>
+            <p><strong>Email:</strong> {{ student.email }}</p>
+            <p><strong>Interests:</strong> {{ student.interests }}</p>
+            <p><strong>Photo:</strong> <img src="{{ student.photo.url }}" alt="Profile Photo" width="100"></p>
+        </div>
+        <div class="text-center">
+            <a href="{% url 'update_profile' %}" class="btn btn-primary">Edit Profile</a>
+        </div>
+    </div>
+</body>
+</html>

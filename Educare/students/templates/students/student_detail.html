@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Detail</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS for detail styling -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .detail-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-top: 50px;
+        }
+        .detail-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .detail-group {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="detail-container">
+                    <h2 class="detail-title">Student Details</h2>
+                    <div class="detail-group">
+                        <strong>Name:</strong> {{ student.name }}
+                    </div>
+                    <div class="detail-group">
+                        <strong>Roll Number:</strong> {{ student.roll_no }}
+                    </div>
+                    <div class="detail-group">
+                        <strong>Class:</strong> {{ student.student_class }}
+                    </div>
+                    <div class="detail-group">
+                        <strong>Current School:</strong> {{ student.current_school.name }}
+                    </div>
+                    <div class="detail-group">
+                        <strong>Father's Name:</strong> {{ student.fathers_name }}
+                    </div>
+                    <div class="detail-group">
+                        <strong>Mother's Name:</strong> {{ student.mothers_name }}
+                    </div>
+                    <div class="detail-group">
+                        <strong>Parents' Phone Number:</strong> {{ student.parents_phone_number }}
+                    </div>
+                    <div class="detail-group">
+                        <strong>Student's Phone Number:</strong> {{ student.student_phone_number }}
+                    </div>
+                    <div class="detail-group">
+                        <strong>Email:</strong> {{ student.email }}
+                    </div>
+                    <div class="detail-group">
+                        <strong>Interests:</strong> {{ student.interests }}
+                    </div>
+                    <div class="detail-group">
+                        <strong>Photo:</strong> 
+                        {% if student.photo %}
+                            <img src="{{ student.photo.url }}" alt="Student Photo" class="img-thumbnail">
+                        {% else %}
+                            No photo uploaded
+                        {% endif %}
+                    </div>
+                    <div class="detail-group">
+                        <strong>School History:</strong>
+                        <ul>
+                            {% for history in student.school_history.all %}
+                                <li>{{ history.school.name }} ({{ history.start_date }} to {{ history.end_date|default:"Present" }})</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="detail-group">
+                        <strong>Achievements:</strong>
+                        <ul>
+                            {% for achievement in student.achievement_set.all %}
+                                <li>{{ achievement.event }} - {{ achievement.type }} - {{ achievement.level }} - {{ achievement.date }} - {{ achievement.outcome }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

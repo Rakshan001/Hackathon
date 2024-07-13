@@ -14,4 +14,6 @@ urlpatterns = [
     path('',views.LoginPage,name='login'),
     path('home/',views.HomePage,name='home'),
     path('logout/',views.LogoutPage,name='logout'),
+    # path('',views.LoginPage,name='login'),
+
 ]
