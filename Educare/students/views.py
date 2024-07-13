@@ -16,7 +16,7 @@ def update_profile(request):
         form = StudentProfileForm(request.POST, request.FILES, instance=student)
         if form.is_valid():
             form.save()
-            return redirect('students:student_detail', student_id=student.id)  # Redirect to the detail view of the student
+            return redirect('students:profile', student_id=student.id)  # Redirect to the detail view of the student
     else:
         form = StudentProfileForm(instance=student)
     return render(request, 'students/update_profile.html', {'form': form})
@@ -29,19 +29,16 @@ def update_profile(request):
 @login_required
 def student_detail(request, student_id):
     student = get_object_or_404(Student, pk=student_id, user=request.user)
-    return render(request, 'students/student_detail.html', {'student': student})
+    # return render(request, 'students/student_detail.html', {'student': student})
+    return render(request, 'students/profile.html', {'student': student})
 
 
 
 
 
 
-# from django.shortcuts import render, get_object_or_404
-# from django.contrib.auth.decorators import login_required
-# from .models import Student
 
-# @login_required
-# def profile(request):
-#     student = get_object_or_404(Student, user=request.user)
-#     return render(request, 'students/profile.html', {'student': student})
+
+
+
 

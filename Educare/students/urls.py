@@ -21,6 +21,6 @@ from . import views
 
 urlpatterns = [
     # path('profile/', views.profile, name='profile'),
-    path('profile/', views.update_profile, name='profile'),
+    path('update_profile/', views.update_profile, name='update_profile'),
     path('<int:student_id>/', views.student_detail, name='student_detail'),
 ]

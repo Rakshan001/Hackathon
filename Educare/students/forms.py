@@ -9,3 +9,10 @@ class StudentProfileForm(forms.ModelForm):
             'fathers_name', 'mothers_name', 'parents_phone_number',
             'student_phone_number', 'email', 'interests', 'photo'
         ]
+
+
+from django import forms
+from teachers.models import Batch
+
+class BatchFilterForm(forms.Form):
+    batch = forms.ModelChoiceField(queryset=Batch.objects.all(), empty_label="Select Batch")

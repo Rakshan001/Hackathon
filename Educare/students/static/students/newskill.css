@@ -1,0 +1,656 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body{
+    background-image: url('https://png.pngtree.com/png-clipart/20221124/ourmid/pngtree-hand-drawn-yellow-wavy-lines-design-png-image_6477112.png');
+    background-color: #ffffff;
+    height: 100vh;
+}
+.navbar {
+    background-color: rgb(51, 51, 51);
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar a, .nav-link {
+    color: white;
+}
+
+.navbar .logo{
+    margin-left: 10px;
+}
+
+.navbar .dropdown-menu{
+    background-color: rgb(51, 51, 51);
+}
+
+.navbar .container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .nav-item :hover{
+    color: yellow;
+}
+
+.navbar .form-control {
+    width: 300px;
+}
+
+.navbar .form-control.me-2 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar .collapse.navbar-collapse {
+    flex-grow: 0;
+}
+
+.navbar .navbar-nav {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .navbar-nav .nav-link {
+    margin-left: 15px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+}
+
+.profiles {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+
+/* Main content */
+.container-lg {
+    display: grid;
+    justify-content: right;
+    width: 50%;
+    margin-left: 200px; /* Adjust this value to fit your layout */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+    background-color: #ffeb3b;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.profile-header img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-header h1 {
+    margin: 0;
+}
+
+.profile-info {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-info div {
+    width: 30%;
+    background-color: #ffeb3b;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.profile-info div h3 {
+    margin-top: 0;
+}
+
+.certificates {
+    margin-top: 20px;
+}
+
+.certificates h3 {
+    margin-top: 0;
+}
+
+.certificates .card {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* /Main content */
+
+/* chatbot */
+.chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ffeb3b;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+}
+.chatbot-icon i {
+    font-size: 30px;
+    color: #333;
+}
+
+.chatbot-window {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.chatbot-header {
+    background-color: #ffeb3b;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.chatbot-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.chatbot-footer {
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.chatbot-footer input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+/* /chatbot */
+
+
+
+.navbar2{
+    background-color: rgb(74, 72, 72);
+    width: 100%;
+    
+}
+.navbar2 .nav-container{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.navbar2 a{
+    text-decoration: none;
+    color: yellow;
+    text-align: center;
+}
+.navbar2 .nav-container :hover{
+    text-decoration: underline;
+    color: rgb(193, 193, 19);
+    text-align: center;
+}
+
+
+.profile-body {
+    background-image: url('https://img.freepik.com/free-vector/hand-drawn-college-entrance-exam-illustration_23-2150359350.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1720656000&semt=ais_user');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh;
+    position: relative;
+    /* overflow: hidden; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile-body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* Adjust the opacity by changing the alpha value */
+    z-index: -1;
+}
+.profile-container{
+    z-index: 2;
+    width: 100%;
+    background-color: transparent;
+    
+    /* backdrop-filter: blur(10px); */
+}
+.profile{
+    display: flex;
+    justify-content: space-evenly;
+}
+.profile-img{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.profile-img .name{
+    text-align: center;
+    padding: 10px;
+}
+.profile-img img{
+    padding: 10px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+.profile-detail{
+    min-width: 50%;
+    padding: 20px;
+    display: flex;
+}
+.profile-name{
+    padding: 10px;
+    margin: 10px;
+}
+.personal-detail{
+    padding: 10px;
+    margin: 10px;
+}
+.achievements-container{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(20px);
+}
+.achievements-container h2{
+    margin-top: 20px;
+
+    text-align: center;
+}
+ .achievement-card{
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    /* backdrop-filter: blur(20px); */
+}
+.achievement-card .card {
+    flex: 1 1 20%;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    backdrop-filter: blur(20px);
+}
+main{
+    backdrop-filter: blur(10px);
+}
+
+/* marks */
+/* .marks {
+    
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+} */
+.marks-container{
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.marks-title {
+    font-size: 44px;
+    margin-bottom: 20px;
+    color: #333;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.marks-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 4px;
+    background-color: #007bff;
+}
+
+.select-class {
+    margin-bottom: 20px;
+}
+
+.select-class select {
+    width: 50%;
+    padding: 10px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    background-color: #e7f3ff;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.select-class select:focus {
+    border-color: #0056b3;
+    background-color: #d6eaff;
+}
+
+.table-container {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+tr:nth-child(even) td {
+    background-color: #f1f1f1;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* certificate Animation */
+
+/* /certificate Animation */
+
+
+/* profile page footer */
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 40px 20px;
+    text-align: left;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+}
+
+.footer-section h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #ecf0f1;
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    list-style: none;
+    padding: 0;
+}
+
+.social-icons li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #3498db;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #34495e;
+    padding-top: 10px;
+}
+
+/* /profile page footer */
+
+/* profile edit form */
+.name {
+    font-size: 24px;
+    margin: 20px;
+}
+
+.fa-pen {
+    cursor: pointer;
+}
+
+.form-popup {
+    z-index: 1000;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 50%;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+/* /profile edit form */
+
+/* .certificates .card {
+    position: relative;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    width: calc(50% - 40px);
+    box-sizing: border-box;
+    overflow: hidden; /* Ensure ::before is contained within the card */
+    /* transition: transform 0.3s, box-shadow 0.3s;
+    
+} */ */
+
+.certificates .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 123, 255, 0.5), rgba(0, 123, 255, 0.2));
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: -1000;
+}
+
+.activity-card:hover::before {
+    opacity: 1;
+}
+
+/* sidebar */
+    .sidebar {
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #f7f5f5;
+    padding-top: 20px;
+    overflow-x: scroll;
+}
+.sidebar a {
+    padding: 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+    text-align: left;
+}
+
+.sidebar .list{
+    margin-top: 7rem;
+    margin-left: 10px;
+}
+/* /sidebar */

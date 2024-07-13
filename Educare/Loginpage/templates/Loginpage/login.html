@@ -1,7 +1,7 @@
 
-{% load static%}
+{% load static %}
 
-<img src="{% static 'loginpage/Next Trip white.png' %}" 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +13,7 @@
         body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background:linear-gradient(#ff6347 , #ff962cd3),url('https://e1.pxfuel.com/desktop-wallpaper/850/156/desktop-wallpaper-students-school-class.jpg') center/cover no-repeat;
+    background:linear-gradient(#47ff94 , #ff962cd3),url('https://e1.pxfuel.com/desktop-wallpaper/850/156/desktop-wallpaper-students-school-class.jpg') center/cover no-repeat;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -139,12 +139,13 @@ form a{
 <body>
     <div class="container">
         <div class="icon-container">
-            <a href="./SkillEducare_login.html"><i class="fa-solid fa-user-graduate" title="Student Login"></i></a>
-            <a href="./Teacher_login.html"><i class="fa-solid fa-chalkboard-teacher" title="Teacher Login"></i></a>
+            
+            <a href="{% url 'faculty_login' %}"><i class="fa-solid fa-chalkboard-teacher" title="Teacher Login"></i></a>
+            <a href="{% url 'login' %}"><i class="fa-solid fa-user-graduate" title="Student Login"></i></a>
         </div>
         <div class="left-panel">
             <h1>Welcome Back</h1>
-            <img src="{% static '' %}" alt="">
+            <img src="{% static 'Loginpage/skilleducare.png' %}"alt="">
         </div>
         <div class="right-panel">
             <h2>Login Here</h2>
